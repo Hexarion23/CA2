@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <style>
+      .custom-nav li {
+        font: garamond;
+        font-size: larger;
+      }
+
+      .custom-div1 {
+        text-align: center;
+        font: garamond;
+        margin-top: 5%;
+        width: 93.75%;
+        margin: auto;
+        background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/1_singapore_polytechnic_panorama_2010.JPG/1200px-1_singapore_polytechnic_panorama_2010.JPG);
+        background-size: 100% 100%;
+        color: #001e4d;
+        height: 550px;
+        border-radius: 13px;
+
+      }
+      .custom-div1 b {
+        color: #ee3640;
+      }
+      .custom-div1 h1 {
+        font-size: 100px;
+        z-index: -2;
+      }
+      html {
+        overflow-y: auto;
+        scroll-behavior: smooth;
+      }
+
+      .custom-div2 {
+        color: black;
+        width: 20px;
+        text-align: center;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        height: 1000px;
+      }
+      .custom-carousel {
+        width: 700px;
+        height: 500px;
+        margin: auto;
+      }
+      .custom-colour {
+        color: #ee3640;
+      }
+      body {
+        font: garamond;
+      }
+      .app {
+        background-color: #001e4d;
+        width: 90%;
+        max-width: 600px;
+        margin: 100px auto 100px;
+        border-radius: 10px;
+        padding: 30px;
+      }
+      .app h1 {
+        font-size: 25px;
+        color: #94a9cc;
+        font-weight: 600;
+        border-bottom: 1px solid #333;
+        padding-bottom: 30px;
+      }
+
+      .quiz {
+        padding: 20px 0;  
+      }
+
+      .quiz h2 {
+        font-size: 18px;
+        color: #94a9cc;
+        font-weight: 600;
+      }
+      .btn {
+        background: #fff;
+        color: #222;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid #222;
+        padding: 10px;
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn:hover:not([disabled]) {
+        background: #222;
+        color: #fff;
+      }
+
+      .btn:disabled {
+        cursor: no-drop;
+      }
+
+      #next-btn {
+        background: #001e4d;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+      }
+      .quizDiv {
+        width: 550px;
+        height: 200px;
+        text-align: center;
+        background-color: #380f31;
+        border-radius: 20px;
+        margin: auto;
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 3px;
+        padding-right: 15px;
+        margin-bottom: 60px;
+        margin-top: 100px;
+      }
+      
+      .quizLink {
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 45px;
+      }
+      .custom-div3 {
+        padding-left: 350px;
+      }
+      @keyframes slide {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-100%);
+        }
+      }
+      .logos {
+        overflow: hidden;
+        background: rgb(209, 209, 209);
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .logos::before,
+      .logos::after {
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 100%;
+        content: "";
+        z-index: 2;
+      }
+      .logos:before {
+        left: 0;
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0),
+          rgb(209, 209, 209)
+        );
+      }
+      .logos:after {
+        right: 0;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          rgb(209, 209, 209)
+        );
+      }
+      .logos:hover .logos-slide {
+        animation-play-state: paused;
+      }
+      .logos-slide {
+        display: inline-block;
+        white-space: nowrap;
+        animation: 12s slide infinite linear;
+      }
+      .logos-slide img {
+        height: 400px;
+        margin: 0 40px;
+      }
+      header {
+        margin-top: 20px;
+      }
+      .custom-dropdown {
+        margin-left: 20px;
+        margin-top: -5px;
+      }
+      footer a {
+        color: #fff;
+        font-size: x-large;
+      }
+      .until {
+        margin: auto;
+        margin-top: 25px;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+        padding: 1em;
+        background: #009578;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        font-family: garamond;
+      }
+
+      .until_component {
+        text-align: center;
+        background: #ffffff;
+        border-radius: 5px;
+      }
+      .until_numeric {
+        color: #333333;
+        padding: 0.5em 0;
+        font-size: 3em;
+        font-weight: bold;
+      }
+      .until_unit {
+        font-size: 1.2em;
+        padding-bottom: 1em;
+        font-weight: bold;
+        color: #94001b;
+      }
+      .until_event {
+        grid-column: span 4;
+        text-align: center;
+        color: #ffffff;
+        font-weight: bold;
+      }
+    </style>
+    <div class="container">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom"
+      >
+        <div class="d-flex align-items-center">
+          <a
+            href="https://www.sp.edu.sg/"
+            class="d-inline-flex link-body-emphasis text-decoration-none"
+            target="_blank"
+          >
+            <img
+              src="images/sp-logo-footer.png"
+              width="auto"
+              height="50"
+              alt="SP Logo"
+            />
+          </a>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <nav
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="nav nav-pills custom-nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link px-2" target="_blank"
+                ><b><h4>Home</h4></b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="second-page.html" class="nav-link px-2" target="_blank"
+                >Second Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="third-page.html" class="nav-link px-2" target="_blank"
+                >Third Page</a
+              >
+            </li>
+            <li class="nav-item">
+              <div class="dropdown custom-dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle btn-success"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown - Go to
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#ourhistory">Our History</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#quiz1">Quiz</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </head>
+  <body>
+    <div class="container xl custom-div1">
+      <h1><b>S</b>ingapore <b>P</b>olytechnic</h1>
+      <h1>70 Years of history.</h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="container" style="text-align: center; font-size: x-large">
+      Come celebrate 70 years of History with SP!!
+      <div class="until" id="myCountDown">
+        <div class="until_component">
+          <div class="until_numeric until_numeric-days">00</div>
+          <div class="until_unit">Days</div>
+        </div>
+        <div class="until_component">
+          <div class="until_numeric until_numeric-hours">00</div>
+          <div class="until_unit">Hours</div>
+        </div>
+        <div class="until_component">
+          <div class="until_numeric until_numeric-minutes">00</div>
+          <div class="until_unit">Minutes</div>
+        </div>
+        <div class="until_component">
+          <div class="until_numeric until_numeric-seconds">00</div>
+          <div class="until_unit">Seconds</div>
+        </div>
+        <div class="until_event">Until 27 October 2024 - SP turns 70!</div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/dayjs.min.js"
+      integrity="sha512-FwNWaxyfy2XlEINoSnZh1JQ5TRRtGow0D6XcmAWmYCRgvqOUTnzCxPc9uF35u5ZEpirk1uhlPVA19tflhvnW1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.12/plugin/duration.min.js"></script>
+    <script src="timer.js"></script>
+    <div class="container">
+      <h2
+        style="text-align: center; margin-bottom: 20px; padding: 30px"
+        id="ourhistory"
+      >
+        Our History
+      </h2>
+      <p style="text-align: center; margin-bottom: 20px">
+        Click on the images to learn more!
+      </p>
+      <div id="carouselExampleCaptions" class="carousel slide custom-carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="5"
+            aria-label="Slide 6"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="6"
+            aria-label="Slide 7"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="7"
+            aria-label="Slide 8"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasExample"
+              role="button"
+              aria-controls="offcanvasExample"
+            >
+              <img
+                src="https://live.staticflickr.com/7387/12940393774_39bf7b243a_b.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 1950s</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+              role="button"
+            >
+              <img
+                src="https://www.nas.gov.sg/archivesonline/watermark/picas_data/tn_pcd/20120000631/img0039.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 1960s</h5>
+            </div>
+          </div>
+          <div class="carousel-item custom-item">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasExample2"
+              role="button"
+              aria-controls="offcanvasExample"
+            >
+              <img
+                src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_3/v1594979581/uwcseaedusg/jwmppvomi3o17x2nxe53/1960-Dover-Hero_images-oldphoto-1919x780.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 1970s</h5>
+            </div>
+          </div>
+          <div class="carousel-item custom-item">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasRight2"
+              role="button"
+              aria-controls="offcanvasRight"
+            >
+              <img
+                src="https://www.spgg.org.sg/web/image/85772-68382cb1/Copy%20of%208.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 1980s</h5>
+            </div>
+          </div>
+          <div class="carousel-item custom-item">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasExample3"
+              role="button"
+              aria-controls="offcanvasExample"
+            >
+              <img
+                src="https://www.spgg.org.sg/web/image/85807-7c16ee50/Copy%20of%2015.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 1990s</h5>
+            </div>
+          </div>
+          <div class="carousel-item custom-item">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasRight3"
+              role="button"
+              aria-controls="offcanvasRight"
+            >
+              <img
+                src="https://www.spgg.org.sg/web/image/85881-762c68e2/Copy%20of%2020.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 2000s</h5>
+            </div>
+          </div>
+          <div class="carousel-item custom-item">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasExample4"
+              role="button"
+              aria-controls="offcanvasExample"
+            >
+              <img
+                src="https://www.mse.gov.sg/images/pae/2010-sg-poly.jpg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 2010s</h5>
+            </div>
+          </div>
+          <div class="carousel-item custom-item">
+            <a
+              data-bs-toggle="offcanvas"
+              href="#offcanvasRight4"
+              role="button"
+              aria-controls="offcanvasRight"
+            >
+              <img
+                src="https://eonreality.com/wp-content/uploads/2022/02/singapore-polytechnic.jpeg"
+                class="d-block w-100"
+                alt="landscape"
+                style="width: 700px; height: 458.28px"
+            /></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>The 2020s</h5>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          The beginning: the 1950s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          In the aftermath of World War II, as the world moved away from
+          traditional, entrepot trade towards industrialization, the importance
+          of technical education became apparent to many individuals within the
+          government and the private sector. In 1951, businessmen met at the
+          Adelphi Hotel in order to discuss the possibility of a polytechnic
+          based in Singapore in order to train skilled, local workers.
+          <br />
+          <br />
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLMzFvfMWcvZf-QUoB7LcS32c69cUkVC9l9iZRH7Nq1YxoiFNp4_sLwwMB7lTLIwAw7wV3Wwi15P7CYBVB-BjIodaUVEaAgSMxxmhboJSE6vi79f0ozhnLqDFwBETnQKLiGpYb/s320/OBQ4a.jpg"
+            style="border-radius: 10px"
+          />
+          <br />
+          <br />
+          The following year, Mr Thio Chan Bee petitioned the government for a
+          polytechnic, a suggestion that was accepted. In 1954, the government
+          passed the Singapore Ordinance, which led to the official
+          establishment of SP, Singapore's first polytechnic. Four years later,
+          in 1958, 2800 students registered for 58 courses and the campus was
+          completed. A few months later in 1959, Prince Philip officially opened
+          SP and Dr Toh Chin Chye took over chairmanship of Board of Governors.
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          Brave new world: The 1960s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        The 60s represented a decade of growth and restructuring for SP. Being
+        the first polytechnic, SP needed to be efficient and notable in order to
+        maintain its necessity. The first Graduation Ceremony on 26 August 1961
+        was held at Victoria Theatre. In 1963, craft courses transferred to
+        Singapore Vocational Institute to make way for expansion and upgrading
+        of professional and technician courses and Mr A R Edis was appointed
+        Principal.
+        <br />
+        <br />
+
+        <img
+          src="https://remembersingapore.org/wp-content/uploads/2016/04/singapore-polytechnic-students-1973.jpg?w=584"
+          style="border-radius: 10px; width: 320px; height: 213px"
+        />
+        <br />
+        <br />
+
+        Through 1964 to 1968, Dr C A Hart led Colombo Plan team to study
+        development of advanced courses. University of Singapore looked into
+        feasibility of a faculty of technology and granting university degrees
+        to Polytechnic graduates. Professional diploma courses gradually
+        replaced by degree courses and the first batch of degree graduates
+        produced. A decision was taken to transfer degree courses to University
+        of Singapore, giving rise to the Faculties of Architecture and
+        Engineering. In 1968 and 1969, Singapore Polytechnic was restructured
+        into School of Industrial Technology and School of Nautical Studies and
+        Industrial and Business Orientation Programme was launched by Dr Toh
+        Chin Chye, Minister for Science and Technology.
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample2"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Expanding out: The 1970s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          For SP, the 70s represented a time of great growth and development. In
+          1971, Nautical Studies, Civil Engineering and Building students were
+          housed in Princess Mary Barracks and the campus site at Dover Road was
+          chosen as permanent home of the Polytechnic. By the end of 1971,
+          Princess Mary Barracks at Dover Road was converted into Princess Mary
+          Campus - SP’s second campus. From 1972 to 1979, extensive expansion
+          and construction continued. Ayer Rajah Road was campus completed and
+          SP began functioning on three campuses.
+
+          <br />
+          <br />
+
+          <img
+            src="https://www.researchgate.net/publication/343082817/figure/fig1/AS:915427840499713@1595266413485/Aerial-view-of-Singapore-Polytechnic-in-the-1950s-Source-Singapore-Polytechnic-Opening.png"
+            style="border-radius: 10px; width: 320px; height: 213px"
+          />
+          <br />
+          <br />
+          Mr V P W Ager was appointed Principal and construction of Dover Road
+          campus began. Foundation stone for new campus was laid by Dr Toh Chin
+          Chye on 12 April 1975 and Mr Low Guan Onn was appointed Chairman of
+          the Board of Governors. In 1978, the Dover Road campus was completed
+          and Mr Khoo Kay Chai confirmed first local Principal after two years
+          in acting capacity. Dover Road campus officially opened by Prime
+          Minister Lee Kuan Yew on 7 July 1979. The ceremony was held at the
+          Quadrangle between the Admin Building and the Library.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight2"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          Maintaining a steady course: the 1980s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        The 80s represented a period of steady growth and expansion, as well as
+        some restructuring. In 1980, Singapore Polytechnic (Amendment) Act was
+        passed in Parliament on 26 February, reconstituting the Board of
+        Governors and reorganising student bodies. Mr Chua Chor Teck was
+        appointed Chairman of the Board of Governors the same year. In 1982,
+        Five-year Expansion Plan (1982-86) was approved, detailing new targets
+        for student enrolment and staffing, as well as new courses. Two years
+        later, all full-time Technician Diploma courses were restructured and
+        revised to cater for high technology needs.
+
+        <br />
+        <br />
+
+        <img
+          src="https://remembersingapore.org/wp-content/uploads/2016/04/singapore-polytechnic-students-1973.jpg?w=584"
+          style="border-radius: 10px; width: 320px; height: 213px"
+        />
+        <br />
+        <br />
+
+        In 1986, Prof George Fong Wah took over as Chairman of the Board of
+        Governors, the Second Phase campus development programme was completed
+        which took five years and SP was visited by His Excellency, Mr Wee Kim
+        Wee, then President of the Republic of Singapore. In 1987,
+        Japan-Singapore Institute of Software Technology (JSIST) was transferred
+        to Singapore Polytechnic. The following year, Graduates' Guild's
+        clubhouse was officially opened by then Senior Minister of State for
+        Education Dr Tay Eng Soon.
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample3"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          A decade of milestones: the 1990s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          The 90s represented ten years of quick growth and the establishment of
+          many organisations for post-graduation. It represented a decade of
+          milestones. In 1990, the new $3.3 million Sports Complex was completed
+          and the 50,000th graduate received his diploma at the 30th Graduation
+          Ceremony. In 1991, the Dual Training Scheme for workers to study
+          part-time at the Polytechnic and receive on-the-job training at their
+          companies was introduced and SP became the first poly to offer a
+          professional Diploma in Accountancy.
+
+          <br />
+          <br />
+
+          <img
+            src="https://www.spgg.org.sg/web/image/85855-1116af7f/Copy%20of%2018.jpg"
+            style="border-radius: 10px; width: 320px; height: 213px"
+          />
+          <br />
+          <br />
+          In 1992, then Deputy Prime Minister Lee Hsien Loong officially opened
+          the Third Phase campus development project and the Singapore
+          Polytechnic Entrepreneurs' Club for graduates who had become
+          successful entrepreneurs was established the next year. In 1994, SP
+          became the first poly to introduce the Diploma in Optometry. In 1995,
+          Principal Khoo Kay Chai retired after 19 years at the helm and Mr Low
+          Wong Fook took over as the new Principal the following year. In 1999,
+          in recognition of its attainment of a commendable level of performance
+          in its journey to excellence, Singapore Polytechnic was made a member
+          of Singapore Quality Class.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight3"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          Achievements and accolades: the 2000s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        The 2000s represented a decade of many awards and honours for SP and its
+        graduates. In 2001, the Polytechnic satisfied requirements for ISO 9000
+        and ISO 14000 certifications and the Industrial Training Programme
+        commemorated its 30th anniversary. Next year, the Public Service Award
+        for Organisational Excellence, one of the most prestigious service wide
+        awards, was presented to SP. In 2003, Principal lecturer, Mr Loh Peng
+        Chum created the world’s first titanium-gold and five-coloured
+        multi-layered gold. The following year, in 2004, 20 years ago, Singapore
+        Polytechnic turned 50. His Excellency, Mr S R Nathan, then President of
+        the Republic of Singapore, launched the yearlong celebrations on 13
+        February at the official opening of the new Convention Centre and Plaza.
+
+        <br />
+        <br />
+
+        <img
+          src="https://www.spgg.org.sg/web/image/85883-b91622c3/Copy%20of%2021.jpg"
+          style="border-radius: 10px; width: 320px; height: 213px"
+        />
+        <br />
+        <br />
+
+        In 2006, Singapore Polytechnic was awarded the Best Environmental Report
+        for 2005 by the Association of Chartered Certified Accountants. In 2007,
+        The SP Scholarship Programme was launched with the first batch of 40 SP
+        Scholars receiving their scholarships. Mr Tan Hang Cheong took over as
+        the new Principal at the start of 2008. In 2009, Chua Koon Ting became
+        the first polytechnic student to read Dentistry at the National
+        University of Singapore and Kuriakin made history by becoming the first
+        student to score distinctions for all his subjects.
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample4"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Restructuring and new appointments: the 2010s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          The 2010s represented a decade of new opportunities and growth for SP.
+          In 2011, Singapore Polytechnic received the President’s Social Service
+          Award 2011 for the voluntary contributions made to the social service
+          sector. The following year, a new Board of Board Governors was
+          appointed. Outgoing chairman Mr Tan Kay Yong, who dedicated 12 years
+          of distinguished service, was replaced by Mr Bill Chang. Six new
+          members also came on board. In 2013, SP was awarded the Public Service
+          Milestone Award at that year's Excellence in Public Service Awards.
+
+          <br />
+          <br />
+
+          <img
+            src="https://www.spgg.org.sg/web/image/85887-fce7186e/Copy%20of%2028.JPG"
+            style="border-radius: 10px; width: 320px; height: 213px"
+          />
+          <br />
+          <br />
+          In 2014, SP celebrated its 60th anniversary and SP’s new vision – A
+          caring community of inspired learners committed to serve with mastery
+          was announced. The following year, SP reached a key milestone with
+          graduation of close to 5,900 students. In 2016, Mr Soh Wai Wah took
+          over as the new Principal and CEO in October 2016. Two years later in
+          2018, SP achieved its 200,000th graduate milestone.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasRight4"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          Present day: the 2020s
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        I can't really describe the 2020s like I did the other decade, owing to
+        the fact that we're still halfway through. However, I can write about
+        the milestones that we've had over the past few years. In 2020, Ms Janet
+        Ang appointed as the new chairman on 16 September. 3 years later, SP
+        launched the first decarbonisation playbook, paving the way for the
+        Institute of Higher Learning. The following year, this year, SP
+        celebrates its 70th anniversary.
+
+        <br />
+        <br />
+
+        <img
+          src="https://smapse.com/storage/2020/05/singapore12.jpg"
+          style="border-radius: 10px; width: 320px; height: 213px"
+        />
+        <br />
+        <br />
+        In 2024, SP achieved the culmination of their efforts: my matriculation.
+        HAHA just kidding. There isn't a lot to write about so I'm just gonna
+        write down what SP means to me specifically. SP wasn't my dream school.
+        In fact, I never wanted to go to a polytechnic in the first place.
+        However, due to some circumstances, I had to. I chose SP, and enrolled
+        into DIT soon after. To be honest, I was not expecting much of this
+        school. Regardless, it blew me out of the water. Here, over the past few
+        months, I've learned so much. I've grown as a person. I've found mentors
+        and friends with whom I'm so excited to spend my next three years with.
+        SP gave me another home. Thank you, SP.
+      </div>
+    </div>
+    <div class="container">
+      <div class="quizDiv" id="quiz1">
+        <h2 class="quizLink">
+          <a
+            data-bs-toggle="collapse"
+            href="#quizApp"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            class="quizLink"
+          >
+            Quiz time! Click to open quiz on SP's history.
+          </a>
+        </h2>
+      </div>
+      <div class="collapse" id="quizApp">
+        <div class="app">
+          <h1>SP Quiz</h1>
+          <div class="quiz">
+            <h2 id="question">Question goes here</h2>
+            <br />
+            <div id="answer-buttons">
+              <button class="btn">Answer 1</button>
+              <button class="btn">Answer 2</button>
+              <button class="btn">Answer 3</button>
+              <button class="btn">Answer 4</button>
+            </div>
+            <button id="next-btn">Next</button>
+          </div>
+        </div>
+        <script src="app.js"></script>
+      </div>
+    </div>
+
+    <h1 style="text-align: center; margin-top: 200px; margin-bottom: 70px">
+      70 Years of Graduates.
+    </h1>
+    <p style="text-align: center; margin-bottom: 50px">
+      Click on the graduates' pictures to learn more about them!
+    </p>
+    <div class="logos">
+      <div class="logos-slide">
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample5"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/amandachia-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample6"
+          role="button"
+          aria-controls="offcanvasExample"
+          ><img
+            src="logos/hanlyn-png95b3205084644b16b445fb950d612615.png"
+            style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample7"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/najulah-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample8"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/kwekailing-big-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample9"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img
+            src="logos/pavan-big-png43c7d399f35b42748cc6f08263912bea.png"
+            style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample10"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/lintongshen-png.png" style="outline-color: gray"
+        /></a>
+
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample11"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/eileenkong-png.png" style="outline-color: gray"
+        /></a>
+      </div>
+      <div class="logos-slide">
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample5"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/amandachia-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample6"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img
+            src="logos/hanlyn-png95b3205084644b16b445fb950d612615.png"
+            style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample7"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/najulah-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample8"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/kwekailing-big-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample9"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img
+            src="logos/pavan-big-png43c7d399f35b42748cc6f08263912bea.png"
+            style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample10"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/lintongshen-png.png" style="outline-color: gray"
+        /></a>
+        <a
+          data-bs-toggle="offcanvas"
+          href="#offcanvasExample11"
+          role="button"
+          aria-controls="offcanvasExample"
+        >
+          <img src="logos/eileenkong-png.png" style="outline-color: gray"
+        /></a>
+      </div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample5"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Amanda Chia Siew Hui - Institutional Medallist, Diploma in Nutrition,
+          Health and Wellness
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://i.ytimg.com/vi/wk-U-soHsX0/maxresdefault.jpg"
+            style="width: 370px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Amanda delivering her valedictorian speech in 2015.
+          </p>
+          <hr />
+          Amanda Chia founded the SP sign language club, through which today
+          more than 100 members are learning to communicate with the physically
+          handicapped using sign language. Ms Chia received the Temasek
+          Education Foundation Sunburst Scholarship and was accepted to study in
+          the NUS' School of Medicine. She was awarded the Singapore Food
+          Manufacturers' Association Gold Medal and the Toh Chin Chye Gold Medal
+          as well during her time in SP.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample6"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Chong Han Lyn - Institutional Medallist, Diploma in Media and
+          Communication
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://scontent-sin6-1.xx.fbcdn.net/v/t31.18172-8/18121484_1306547469413763_6884824956296279248_o.jpg?stp=dst-jpg_p180x540&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=ho5TCWAbXPgQ7kNvgHGaYko&_nc_ht=scontent-sin6-1.xx&oh=00_AYCgD6ZcxUUbB-fhmMvsI78rAz9WAnUYX3mdtTZNnPKi2g&oe=66C58D19"
+            style="width: 370px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Chong Han Lyn managing the communication panels in SP.
+          </p>
+          <hr />
+          Chong Han Lyn worked on several projects during her time at SP, such
+          as "Chance", a short film for the Temasek 20/20 Short Film Project, as
+          well as a one-month social media campaign in partnership with Migrant
+          Workers' Centre. She accepted Starcom's offer for the role of media
+          executive. Ms Chong was awarded the Low Guan Onn Gold Medal and the
+          Asia Fund Space Gold Medal during her time at SP.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample7"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Mohamed Najulah -Institutional Medallist, Diploma in Business
+          Information Technology
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://news.microsoft.com/wp-content/uploads/2015/09/microsoft_youthspark_scholarship_3.jpg"
+            style="width: 350px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Najulah and teammates being presented with the Microsoft YouthSparks
+            Scholarship
+          </p>
+          <hr />
+          Najulah participated in several competitions throughout his years at
+          SP. He took part in the Data-Driven Innovation Challenge and the
+          Transport & Youth Hackathon organised by the LTA. He, along with some
+          classmates, developed an application called "Happy Wheel" that
+          leveraged on publicly available data sets to suggest
+          wheelchair-friendly paths to various locations. His efforts were
+          rewarded with the People's Choice award and a commendation by Prime
+          Minister Lee Hsien Loong. Najulah decided to pursue a degree in
+          Information Systems at SMU. He was awarded with the Chua Chor Teck
+          Gold Medal and the IMDA Gold Medal during his time at SP.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample8"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Kwek Ai Ling -Institutional Medallist, Diploma in Experience and
+          Product Design
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://scontent-sin6-3.xx.fbcdn.net/v/t31.18172-8/13147617_1004506132951233_6738404164154166871_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f798df&_nc_ohc=OT6OqZQt3WUQ7kNvgE_M9M0&_nc_ht=scontent-sin6-3.xx&oh=00_AYAJ8qEoTLYk7mMpOzoEkLRQiHLZeBxY8QBrqvXyWwCNtA&oe=66C69F03"
+            style="width: 350px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Ai Ling being presented with her diploma and Institutional Medal at
+            her graduation.
+          </p>
+          <hr />
+          Kwek Ai Ling acted as Organising Chairman for the DXPD section of the
+          SP Design School Graduation Showcase and participated in the
+          Singaplural 48 Hours Challenge during the Singapore Design Week. She
+          was awarded the NUS Global Merit Scholarship and went on to study
+          Industrial Design at NUS. During Ai Ling's time at SP, she was awarded
+          the Toh Chin Chye Gold Medal, the DBS Bank Gold Medal and the Norton
+          Prize.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample9"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Pavan Singh Gill - Institutional Medallist, Diplomain Electrical and
+          Electronic Engineering
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://onecms-res.cloudinary.com/image/upload/s--OkWhUid4--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/tdy-migration/25392407.jpg?itok=C16b_wWT"
+            style="width: 350px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Pavan Singh and Leong Guang Ho presenting a biochip they created at
+            SP.
+          </p>
+          <hr />
+          Pavan acted as Corporate Coordinator in SP Students' Union and became
+          President of the Student Entrepreunership Club. He chaired a committee
+          for the Youth Model ASEAN Conference, a regional gathering of youths
+          from all 10 ASEAN states. He went on to pursue a degree in Electrical
+          Engineering at NUS under the NUS Merit Scholarship. During his time at
+          SP, he won the Lee Kuan Yew Award, the SMRT Gold Medal, the OCBC Prize
+          and the Institution of Engineers Gold Medal Award.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample10"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Lin Tong Shen - Course Medallist, Diploma in Clean Energy
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://brightsparks.com.sg/magazine/july-2022/img/feature/ema/ema-2.jpg"
+            style="width: 350px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Lin Tong Shen at the Energy Market Authority.
+          </p>
+          <hr />
+          Tong Shen created a solar cell from a silicon wafer and went on an
+          industrial attachment trip to an energy company in China, as well as a
+          second one at A*STAR. He pursued a degree of electrical and electronic
+          engineering at NTU and the Energy Market Authority Undergraduate
+          Scholarship. During his time at SP, Tong Shen won the A*STAR Science
+          Award and the Singapore Power Prize.
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample11"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+          Eileen Kong Ee Lin - Course Medallist, Diploma in Accountancy
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <img
+            src="https://media.licdn.com/dms/image/D5622AQF8r4F0KAvlSg/feedshare-shrink_2048_1536/0/1720190444648?e=1724889600&v=beta&t=ElZnUNYEDUz1qbZ-p3BUU6x5PlfBDSmVldwC15ici4M"
+            style="width: 350px; height: auto; margin-bottom: 20px"
+          />
+          <p style="margin-top: -15px; font-size: smaller; color: grey">
+            Eileen at the SP70 DBA Homecoming Event.
+          </p>
+          <hr />
+          Eileen completed her internship at KPMG LLP, one of the Big Four
+          accounting firms in Singapore. She was also the President of the SP
+          Business School Kindness Movement, and took part regularly in blood
+          donation drives and entertaining senior citizens on trips to museums
+          and the botanic gardens. She was offered places to study business
+          administration in NTU and NUS. During her time in SP, she was awarded
+          the ACCA Prize, the Far East Organisation Scholarship, the LEAD
+          Scholarship and the Model Student Award.
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div class="container">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>About SP</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.sp.edu.sg/sp/about-sp/corporate-information/mission-vision"
+                  target="_blank"
+                  class="nav-link p-0 text-body-secondary"
+                  >SP's Mission</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.sp.edu.sg/sp/admissions"
+                  class="nav-link p-0 text-body-secondary"
+                  >Admissions</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.sp.edu.sg/sp/education"
+                  class="nav-link p-0 text-body-secondary"
+                  >Courses</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.sp.edu.sg/sp/student-services"
+                  class="nav-link p-0 text-body-secondary"
+                  >Student Services</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.sp.edu.sg/sp/about-sp/facilities"
+                  class="nav-link p-0 text-body-secondary"
+                  >SP Facilities</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Site navigation</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  href="second-page.html"
+                  class="nav-link p-0 text-body-secondary"
+                  >Second Page</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a
+                  href="third-page.html"
+                  class="nav-link p-0 text-body-secondary"
+                  >Third Page</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#ourhistory" class="nav-link p-0 text-body-secondary"
+                  >History</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="#quiz1" class="nav-link p-0 text-body-secondary"
+                  >Quiz</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 footer-links custom-div3">
+            <h2>Our Social Media</h2>
+            <ha>
+              <a href="https://www.facebook.com/singaporepolytechnic/"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/singaporepoly"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/@singaporepolytechnic"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="https://www.tiktok.com/@singaporepoly?lang=en"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+              <a href="https://www.linkedin.com/feed/"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a href="https://t.me/s/SingaporePoly"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+                  
+            </ha>
+                  
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+        >
+          <p>&copy; 2024 Singapore Polytechnic. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </footer>
+</html>
